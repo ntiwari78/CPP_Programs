@@ -10,9 +10,9 @@ public:
  source->destination->sourceNext
  Assert if source if NULL.
 */
-void MoveNode(struct Node** destRef, struct Node** sourceRef)
+void MoveNode(Node** destRef, Node** sourceRef)
 {
-    struct Node* newNode = *sourceRef; // the front source node
+    Node* newNode = *sourceRef; // the front source node
     assert(newNode != NULL);
     *sourceRef = newNode->next; // Advance the source pointer
     newNode->next = *destRef; // Link the old dest off the new node
@@ -24,10 +24,10 @@ void MoveNode(struct Node** destRef, struct Node** sourceRef)
  * one pass through each list.
  * Return
  */
-struct Node* Merge(struct Node* head1, struct Node* head2)
+Node* Merge(Node* head1, Node* head2)
 {
-    struct Node head;          // Head node to hang the result on
-    struct Node* tail = &head; // Points to the last result node
+    Node head;          // Head node to hang the result on
+    Node* tail = &head; // Points to the last result node
                                // so tail->next is the place to add
                                // new nodes to the head.
     dummy.next = NULL;
